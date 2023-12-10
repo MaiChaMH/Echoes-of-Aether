@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,8 @@ public class player : MonoBehaviour
     public float jumpForce = 10.0f, turnAccelerationForce = 10.0f;
     public float jumpTime = 0.35f, turnAccTime = 0.35f;
     public float fireCooldown = 0.5f;
+    public int maxHealth = 100, currentHealth, damage = 20;
+    public HealthBar healthBar;
 
     private float fireCooldownTimer = 0f;
     private bool shootable = false;
@@ -27,6 +30,8 @@ public class player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<PolygonCollider2D>();
         animator = GetComponent<Animator>();
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     private void Update()
@@ -130,6 +135,12 @@ public class player : MonoBehaviour
         animator.SetBool("shootable", shootable);
     }
 
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+    }
+
     float NormalizeValue(float value, float min, float max)
     {
         if (min == max) { return 0f; }
@@ -156,6 +167,14 @@ public class player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
+        {
+            TakeDamage(damage);
+            if (currentHealth <= 0f)
+            {
+                SceneManager.LoadScene(Level1);
+            }
+        }
+        if (collision.gameObject.CompareTag("Traps"))
         {
             SceneManager.LoadScene(Level1);
         }

@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - T
   - endportal
+  - Traps
   layers:
   - Default
   - TransparentFX
