@@ -19,7 +19,7 @@ TagManager:
   - UI
   - T
   - Enemy
-  - 
+  - Text
   - 
   - 
   - 
@@ -55,4 +55,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 2957860661
+    locked: 0
+  - name: Text
+    uniqueID: 617562963
     locked: 0
