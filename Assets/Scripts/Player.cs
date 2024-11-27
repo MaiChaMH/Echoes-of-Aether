@@ -49,19 +49,20 @@ public class Player : MonoBehaviour
     {
         maxHealth = 100,
         currentHealth = 100,
-        healthBar = null // Assign in Inspector
+        healthBar = null
     };
 
     // Timers and States
     private float fireCooldownTimer = 0f;
-    private bool shootable = false;
     private bool isJumping;
     private float jumpTimeCounter;
+    private bool isGravityFlipped = false;
 
     // References and Identifiers
     private Rigidbody2D rb;
     private PolygonCollider2D coll;
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
     private string Level1 = "Level1";
     private string EndLevel = "End";
     [SerializeField] private LayerMask jumpground;
@@ -77,6 +78,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<PolygonCollider2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         healthSettings.currentHealth = healthSettings.maxHealth;
         healthSettings.healthBar.SetMaxHealth(healthSettings.maxHealth);
         lastSavepointPosition = transform.position;
@@ -92,19 +94,21 @@ public class Player : MonoBehaviour
             GetComponent<AudioSource>().Play();
             isJumping = true;
             jumpTimeCounter = movementSettings.jumpTime;
-            rb.velocity = Vector2.up * movementSettings.jumpForce;
+            Vector2 jumpDirection = isGravityFlipped ? Vector2.down : Vector2.up;
+            rb.velocity = jumpDirection * movementSettings.jumpForce;
         }
 
         if (Input.GetButton("Jump") && isJumping)
         {
-            if (jumpTimeCounter > 0)
+            if (jumpTimeCounter <= 0)
             {
-                rb.velocity = Vector2.up * movementSettings.jumpForce;
-                jumpTimeCounter -= Time.deltaTime;
+                isJumping = false;
             }
             else
             {
-                isJumping = false;
+                Vector2 jumpDirection = isGravityFlipped ? Vector2.down : Vector2.up;
+                rb.velocity = jumpDirection * movementSettings.jumpForce;
+                jumpTimeCounter -= Time.deltaTime;
             }
         }
 
@@ -113,87 +117,93 @@ public class Player : MonoBehaviour
             isJumping = false;
         }
 
+        if (Input.GetButtonDown("Flip") && isGrounded())
+        {
+            FlipGravity();
+        }
+
         float nVertical = NormalizeValue(verticalInput, -10f, 10f);
 
         if (fireCooldownTimer > 0)
         {
             fireCooldownTimer -= Time.deltaTime;
-
-            if (horizontalInput < 0)
-            {
-                transform.eulerAngles = new Vector3(0, 180, 0);
-                transform.Translate(Vector2.left * 0);
-            }
-            else if (horizontalInput > 0)
-            {
-                transform.eulerAngles = new Vector3(0, 0, 0);
-                transform.Translate(Vector2.left * 0);
-            }
+            CharacterDS(horizontalInput);
         }
 
         if (Input.GetButtonDown("Fire1") && fireCooldownTimer <= 0)
         {
-            shootable = true;
+            animator.SetTrigger("Fire");
             fireCooldownTimer = combatSettings.fireCooldown;
         }
+       
 
         if (fireCooldownTimer <= 0)
         {
-            shootable = false;
-
-            if (horizontalInput < 0)
-            {
-                transform.eulerAngles = new Vector3(0, 180, 0);
-
-                if (Input.GetButton("Horizontal"))
-                {
-                    transform.Translate(Vector2.left * LEFT * movementSettings.speed * Time.deltaTime);
-                }
-                else
-                {
-                    transform.Translate(Vector2.left * 0);
-                }
-            }
-            else if (horizontalInput > 0)
-            {
-                transform.eulerAngles = new Vector3(0, 0, 0);
-
-                if (Input.GetButton("Horizontal"))
-                {
-                    transform.Translate(Vector2.right * RIGHT * movementSettings.speed * Time.deltaTime);
-                }
-                else
-                {
-                    transform.Translate(Vector2.right * 0);
-                }
-            }
+            CharacterDS(horizontalInput);
         }
 
         // Animator Communication
         animator.SetFloat("xVelocity", Mathf.Abs(horizontalInput));
         animator.SetFloat("yVelocity", nVertical);
         animator.SetBool("isGround", isGrounded());
-        animator.SetBool("shootable", shootable);
+    }
+    
+    //Flip Gravity
+    void FlipGravity()
+    {
+        spriteRenderer.flipY = !spriteRenderer.flipY;
+        isGravityFlipped = !isGravityFlipped;
+        rb.gravityScale *= -1;
+        transform.rotation = Quaternion.identity;
+        //transform.Rotate(180f, 0f, 0f);
+    }
+    
+    //Character Direction/Speed Logic
+    void CharacterDS(float horizontalInput)
+    {
+        if (horizontalInput < 0)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+            
+            if (!Input.GetButton("Horizontal")) return;
+            transform.Translate(Vector2.left * LEFT * movementSettings.speed * Time.deltaTime);
+        }
+        else if (horizontalInput > 0)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+
+            if (!Input.GetButton("Horizontal")) return;
+            transform.Translate(Vector2.right * RIGHT * movementSettings.speed * Time.deltaTime);
+        }
     }
 
+    //Taking Damage
     void TakeDamage(int damage)
     {
         healthSettings.currentHealth -= damage;
         healthSettings.healthBar.SetHealth(healthSettings.currentHealth);
 
-        if (healthSettings.currentHealth <= 0)
-        {
-            Respawn();
-        }
+        if (healthSettings.currentHealth > 0) return;
+        Respawn();
     }
+    
+    //Respawn
     void Respawn()
     {
         transform.position = lastSavepointPosition;
         healthSettings.currentHealth = healthSettings.maxHealth;
         healthSettings.healthBar.SetHealth(healthSettings.currentHealth);
+        if (isGravityFlipped)
+        {
+          FlipGravity();  
+        }
+        //isGravityFlipped = false;
+        //rb.gravityScale = Mathf.Abs(rb.gravityScale);
+        //transform.rotation = Quaternion.identity;
         Debug.Log("Respawn");
     }
 
+    //NormalizeValue
     float NormalizeValue(float value, float min, float max)
     {
         if (min == max) { return 0f; }
@@ -203,7 +213,8 @@ public class Player : MonoBehaviour
     // Ground Check
     private bool isGrounded()
     {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpground);
+        Vector2 groundDirection = isGravityFlipped ? Vector2.up : Vector2.down;
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, groundDirection, .1f, jumpground);
     }
 
     // Portal
@@ -225,10 +236,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             TakeDamage(combatSettings.damage);
-            if (healthSettings.currentHealth <= 0f)
-            {
-                Respawn();
-            }
+            return;
         }
         if (collision.gameObject.CompareTag("Traps"))
         {

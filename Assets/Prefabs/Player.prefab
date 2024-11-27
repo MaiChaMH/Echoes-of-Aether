@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1968899532, guid: 02dca8b3aa07cef49813f038e2a1a3b6, type: 3}
+  m_Sprite: {fileID: 754440482, guid: b91bf6526b2e22423b2fb2b785f64650, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -130,16 +130,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbdeecd78e85b9c4c927b38530d96da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  jumpForce: 10
-  turnAccelerationForce: 10
-  jumpTime: 0.35
-  turnAccTime: 0.35
-  fireCooldown: 0.5
-  maxHealth: 100
-  currentHealth: 0
-  damage: 20
-  healthBar: {fileID: 0}
+  movementSettings:
+    speed: 5
+    jumpForce: 10
+    jumpTime: 0.35
+    turnAccelerationForce: 10
+    turnAccTime: 0.35
+  combatSettings:
+    fireCooldown: 0.5
+    damage: 20
+  healthSettings:
+    maxHealth: 100
+    currentHealth: 100
+    healthBar: {fileID: 0}
   jumpground:
     serializedVersion: 2
     m_Bits: 64
@@ -194,7 +197,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.22, y: 0.45}
+    oldSize: {x: 0.48, y: 0.48}
     newSize: {x: 0.22, y: 0.45}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
