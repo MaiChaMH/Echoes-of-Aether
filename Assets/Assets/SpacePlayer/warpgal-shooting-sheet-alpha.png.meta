@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,7 +108,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: IdleAttack
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d60e859f2b10858ecac1b75e2cefb36f
+      internalID: -332763275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunAttack
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3191619511e8186f836bc04074b17c7
+      internalID: -1056599139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpAttack
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 529e54466af7591f180ced919fa9f3f1
+      internalID: -89604181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +182,292 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      IdleAttack: -332763275
+      JumpAttack: -89604181
+      RunAttack: -1056599139
+      warpgal-shooting-sheet-alpha_0: -917381813
+      warpgal-shooting-sheet-alpha_1: -1692590436
+      warpgal-shooting-sheet-alpha_10: -2007138623
+      warpgal-shooting-sheet-alpha_100: 712047361
+      warpgal-shooting-sheet-alpha_101: -1127471166
+      warpgal-shooting-sheet-alpha_102: 133060703
+      warpgal-shooting-sheet-alpha_103: -594199880
+      warpgal-shooting-sheet-alpha_104: -2072122137
+      warpgal-shooting-sheet-alpha_105: -132771305
+      warpgal-shooting-sheet-alpha_106: 1208104056
+      warpgal-shooting-sheet-alpha_107: 76307110
+      warpgal-shooting-sheet-alpha_108: 1029162348
+      warpgal-shooting-sheet-alpha_109: 2126226721
+      warpgal-shooting-sheet-alpha_11: -1718040590
+      warpgal-shooting-sheet-alpha_110: 894380766
+      warpgal-shooting-sheet-alpha_111: -458436456
+      warpgal-shooting-sheet-alpha_112: -1083619033
+      warpgal-shooting-sheet-alpha_113: 961374346
+      warpgal-shooting-sheet-alpha_114: 1797341372
+      warpgal-shooting-sheet-alpha_115: -957939360
+      warpgal-shooting-sheet-alpha_116: 486392275
+      warpgal-shooting-sheet-alpha_117: 2094678438
+      warpgal-shooting-sheet-alpha_118: 1790403876
+      warpgal-shooting-sheet-alpha_119: 1355447511
+      warpgal-shooting-sheet-alpha_12: 52867421
+      warpgal-shooting-sheet-alpha_120: 50999755
+      warpgal-shooting-sheet-alpha_121: -100091811
+      warpgal-shooting-sheet-alpha_122: -1161768011
+      warpgal-shooting-sheet-alpha_123: -1529610816
+      warpgal-shooting-sheet-alpha_124: 1038323630
+      warpgal-shooting-sheet-alpha_125: -126045617
+      warpgal-shooting-sheet-alpha_126: -950226643
+      warpgal-shooting-sheet-alpha_127: 266477466
+      warpgal-shooting-sheet-alpha_128: -1548315396
+      warpgal-shooting-sheet-alpha_129: 118808170
+      warpgal-shooting-sheet-alpha_13: 634843573
+      warpgal-shooting-sheet-alpha_130: -201004108
+      warpgal-shooting-sheet-alpha_131: -640699629
+      warpgal-shooting-sheet-alpha_132: 1218921105
+      warpgal-shooting-sheet-alpha_133: 732778621
+      warpgal-shooting-sheet-alpha_134: -1705792927
+      warpgal-shooting-sheet-alpha_136: 575035268
+      warpgal-shooting-sheet-alpha_137: 1586829716
+      warpgal-shooting-sheet-alpha_138: -468094041
+      warpgal-shooting-sheet-alpha_139: 112712041
+      warpgal-shooting-sheet-alpha_14: 953458299
+      warpgal-shooting-sheet-alpha_141: -1324870142
+      warpgal-shooting-sheet-alpha_143: -640374694
+      warpgal-shooting-sheet-alpha_144: -1120386488
+      warpgal-shooting-sheet-alpha_145: 1203190450
+      warpgal-shooting-sheet-alpha_146: 946104018
+      warpgal-shooting-sheet-alpha_147: -1532512883
+      warpgal-shooting-sheet-alpha_148: 986211111
+      warpgal-shooting-sheet-alpha_149: -602054225
+      warpgal-shooting-sheet-alpha_15: -724314100
+      warpgal-shooting-sheet-alpha_150: -422070661
+      warpgal-shooting-sheet-alpha_151: 1021666855
+      warpgal-shooting-sheet-alpha_152: 474629844
+      warpgal-shooting-sheet-alpha_153: 1251382176
+      warpgal-shooting-sheet-alpha_154: 504950009
+      warpgal-shooting-sheet-alpha_155: -2078930771
+      warpgal-shooting-sheet-alpha_156: -1419372433
+      warpgal-shooting-sheet-alpha_157: -1427208906
+      warpgal-shooting-sheet-alpha_158: -1893879659
+      warpgal-shooting-sheet-alpha_159: -1514293588
+      warpgal-shooting-sheet-alpha_16: 1863475123
+      warpgal-shooting-sheet-alpha_160: -747148020
+      warpgal-shooting-sheet-alpha_161: -1666984036
+      warpgal-shooting-sheet-alpha_162: 917175542
+      warpgal-shooting-sheet-alpha_163: -1124456026
+      warpgal-shooting-sheet-alpha_164: 1523022104
+      warpgal-shooting-sheet-alpha_165: -1941228588
+      warpgal-shooting-sheet-alpha_166: 1925901262
+      warpgal-shooting-sheet-alpha_167: 1099745420
+      warpgal-shooting-sheet-alpha_168: -1999912155
+      warpgal-shooting-sheet-alpha_169: 1968551867
+      warpgal-shooting-sheet-alpha_17: -1318622687
+      warpgal-shooting-sheet-alpha_170: -664565796
+      warpgal-shooting-sheet-alpha_171: 1186439995
+      warpgal-shooting-sheet-alpha_172: 366929073
+      warpgal-shooting-sheet-alpha_173: -2111797386
+      warpgal-shooting-sheet-alpha_174: 384940161
+      warpgal-shooting-sheet-alpha_175: 1173549634
+      warpgal-shooting-sheet-alpha_176: -1622318306
+      warpgal-shooting-sheet-alpha_177: -233954792
+      warpgal-shooting-sheet-alpha_178: -195164570
+      warpgal-shooting-sheet-alpha_179: -1439824924
+      warpgal-shooting-sheet-alpha_18: -1048286907
+      warpgal-shooting-sheet-alpha_180: -1814365969
+      warpgal-shooting-sheet-alpha_181: -2022751349
+      warpgal-shooting-sheet-alpha_182: -1789235841
+      warpgal-shooting-sheet-alpha_183: -919910190
+      warpgal-shooting-sheet-alpha_184: 1674101237
+      warpgal-shooting-sheet-alpha_185: 1930245276
+      warpgal-shooting-sheet-alpha_186: 122012836
+      warpgal-shooting-sheet-alpha_187: 463859835
+      warpgal-shooting-sheet-alpha_188: 567884675
+      warpgal-shooting-sheet-alpha_189: -153166845
+      warpgal-shooting-sheet-alpha_19: 182599918
+      warpgal-shooting-sheet-alpha_190: -1251231480
+      warpgal-shooting-sheet-alpha_191: 499787437
+      warpgal-shooting-sheet-alpha_192: -855452392
+      warpgal-shooting-sheet-alpha_193: -1699943845
+      warpgal-shooting-sheet-alpha_194: -1913862689
+      warpgal-shooting-sheet-alpha_195: -556338801
+      warpgal-shooting-sheet-alpha_196: 429890619
+      warpgal-shooting-sheet-alpha_197: 810683360
+      warpgal-shooting-sheet-alpha_198: -1799482523
+      warpgal-shooting-sheet-alpha_199: 1508257721
+      warpgal-shooting-sheet-alpha_2: 1677650557
+      warpgal-shooting-sheet-alpha_20: 67898880
+      warpgal-shooting-sheet-alpha_200: 2137025772
+      warpgal-shooting-sheet-alpha_201: -481638366
+      warpgal-shooting-sheet-alpha_202: 530652986
+      warpgal-shooting-sheet-alpha_203: -1102399414
+      warpgal-shooting-sheet-alpha_204: 1960587761
+      warpgal-shooting-sheet-alpha_205: 987963263
+      warpgal-shooting-sheet-alpha_206: -588499391
+      warpgal-shooting-sheet-alpha_207: 1691533123
+      warpgal-shooting-sheet-alpha_208: 2057355753
+      warpgal-shooting-sheet-alpha_209: 1670972188
+      warpgal-shooting-sheet-alpha_21: -1933433159
+      warpgal-shooting-sheet-alpha_210: -1521937690
+      warpgal-shooting-sheet-alpha_211: -1059965800
+      warpgal-shooting-sheet-alpha_212: -970487798
+      warpgal-shooting-sheet-alpha_213: 1663320931
+      warpgal-shooting-sheet-alpha_214: -1686852865
+      warpgal-shooting-sheet-alpha_215: -1665256628
+      warpgal-shooting-sheet-alpha_216: -418486297
+      warpgal-shooting-sheet-alpha_217: -1845710181
+      warpgal-shooting-sheet-alpha_218: -821217346
+      warpgal-shooting-sheet-alpha_219: 553515446
+      warpgal-shooting-sheet-alpha_22: -2040694489
+      warpgal-shooting-sheet-alpha_220: -1125104513
+      warpgal-shooting-sheet-alpha_221: 1591599765
+      warpgal-shooting-sheet-alpha_222: -1130121507
+      warpgal-shooting-sheet-alpha_223: 199576260
+      warpgal-shooting-sheet-alpha_224: -1578962179
+      warpgal-shooting-sheet-alpha_225: 1355299238
+      warpgal-shooting-sheet-alpha_226: 1127474238
+      warpgal-shooting-sheet-alpha_227: -1445507867
+      warpgal-shooting-sheet-alpha_228: 432609095
+      warpgal-shooting-sheet-alpha_229: 2079750127
+      warpgal-shooting-sheet-alpha_23: 420934851
+      warpgal-shooting-sheet-alpha_230: -672354904
+      warpgal-shooting-sheet-alpha_231: 964515617
+      warpgal-shooting-sheet-alpha_232: 2052807168
+      warpgal-shooting-sheet-alpha_233: -1754554198
+      warpgal-shooting-sheet-alpha_234: -942361089
+      warpgal-shooting-sheet-alpha_235: -1417018866
+      warpgal-shooting-sheet-alpha_236: -196442921
+      warpgal-shooting-sheet-alpha_237: 658926578
+      warpgal-shooting-sheet-alpha_238: 648522536
+      warpgal-shooting-sheet-alpha_239: 864931791
+      warpgal-shooting-sheet-alpha_24: -1886284198
+      warpgal-shooting-sheet-alpha_240: -1262041251
+      warpgal-shooting-sheet-alpha_241: 1452978706
+      warpgal-shooting-sheet-alpha_242: 1551045613
+      warpgal-shooting-sheet-alpha_243: 937284067
+      warpgal-shooting-sheet-alpha_244: 916831799
+      warpgal-shooting-sheet-alpha_245: -1519160233
+      warpgal-shooting-sheet-alpha_246: -53030390
+      warpgal-shooting-sheet-alpha_247: 28374986
+      warpgal-shooting-sheet-alpha_248: 225831436
+      warpgal-shooting-sheet-alpha_249: 2088789376
+      warpgal-shooting-sheet-alpha_25: 1758947980
+      warpgal-shooting-sheet-alpha_250: -483092699
+      warpgal-shooting-sheet-alpha_251: -1260517588
+      warpgal-shooting-sheet-alpha_252: -2097057724
+      warpgal-shooting-sheet-alpha_253: 1422027798
+      warpgal-shooting-sheet-alpha_254: -106028781
+      warpgal-shooting-sheet-alpha_255: -1137000946
+      warpgal-shooting-sheet-alpha_256: -2112853653
+      warpgal-shooting-sheet-alpha_257: 145280137
+      warpgal-shooting-sheet-alpha_258: 2073196387
+      warpgal-shooting-sheet-alpha_259: -36315833
+      warpgal-shooting-sheet-alpha_26: -869067688
+      warpgal-shooting-sheet-alpha_260: -1112057386
+      warpgal-shooting-sheet-alpha_261: 967804889
+      warpgal-shooting-sheet-alpha_262: -1795555699
+      warpgal-shooting-sheet-alpha_263: 1056701658
+      warpgal-shooting-sheet-alpha_264: 137434295
+      warpgal-shooting-sheet-alpha_265: 414143747
+      warpgal-shooting-sheet-alpha_266: -1134347017
+      warpgal-shooting-sheet-alpha_267: 1033912819
+      warpgal-shooting-sheet-alpha_268: 2001623049
+      warpgal-shooting-sheet-alpha_269: 2090322582
+      warpgal-shooting-sheet-alpha_27: -701846894
+      warpgal-shooting-sheet-alpha_270: 1866632293
+      warpgal-shooting-sheet-alpha_271: 356649136
+      warpgal-shooting-sheet-alpha_272: -1288087363
+      warpgal-shooting-sheet-alpha_273: -222768880
+      warpgal-shooting-sheet-alpha_274: -569605201
+      warpgal-shooting-sheet-alpha_275: -1563425609
+      warpgal-shooting-sheet-alpha_276: 1543236827
+      warpgal-shooting-sheet-alpha_277: 174491177
+      warpgal-shooting-sheet-alpha_278: 311950083
+      warpgal-shooting-sheet-alpha_279: 801475641
+      warpgal-shooting-sheet-alpha_28: 1178809515
+      warpgal-shooting-sheet-alpha_280: 614572669
+      warpgal-shooting-sheet-alpha_281: 2020828484
+      warpgal-shooting-sheet-alpha_282: 150008150
+      warpgal-shooting-sheet-alpha_283: 423294089
+      warpgal-shooting-sheet-alpha_284: -1052718061
+      warpgal-shooting-sheet-alpha_29: 221908792
+      warpgal-shooting-sheet-alpha_3: -147097064
+      warpgal-shooting-sheet-alpha_30: 420686755
+      warpgal-shooting-sheet-alpha_31: -1471460673
+      warpgal-shooting-sheet-alpha_32: -1459546740
+      warpgal-shooting-sheet-alpha_33: -328172339
+      warpgal-shooting-sheet-alpha_34: 2101809186
+      warpgal-shooting-sheet-alpha_35: -37095029
+      warpgal-shooting-sheet-alpha_36: 1963759272
+      warpgal-shooting-sheet-alpha_37: 1046533921
+      warpgal-shooting-sheet-alpha_38: 592033119
+      warpgal-shooting-sheet-alpha_39: 76541738
+      warpgal-shooting-sheet-alpha_4: 1921393787
+      warpgal-shooting-sheet-alpha_40: -1179699705
+      warpgal-shooting-sheet-alpha_41: -1064647959
+      warpgal-shooting-sheet-alpha_42: -772657071
+      warpgal-shooting-sheet-alpha_43: -1377964049
+      warpgal-shooting-sheet-alpha_44: -1618157063
+      warpgal-shooting-sheet-alpha_45: 1378631238
+      warpgal-shooting-sheet-alpha_46: -650390079
+      warpgal-shooting-sheet-alpha_47: 550601338
+      warpgal-shooting-sheet-alpha_48: 1027040095
+      warpgal-shooting-sheet-alpha_49: 855485451
+      warpgal-shooting-sheet-alpha_5: 1375122263
+      warpgal-shooting-sheet-alpha_50: 1740242145
+      warpgal-shooting-sheet-alpha_51: 2055271779
+      warpgal-shooting-sheet-alpha_52: -223685642
+      warpgal-shooting-sheet-alpha_53: 897479063
+      warpgal-shooting-sheet-alpha_54: 1689970376
+      warpgal-shooting-sheet-alpha_55: 1628127565
+      warpgal-shooting-sheet-alpha_56: 438719573
+      warpgal-shooting-sheet-alpha_57: -1075923353
+      warpgal-shooting-sheet-alpha_58: 1753539949
+      warpgal-shooting-sheet-alpha_59: 1736101030
+      warpgal-shooting-sheet-alpha_6: 235174748
+      warpgal-shooting-sheet-alpha_60: -1314465480
+      warpgal-shooting-sheet-alpha_61: -210777707
+      warpgal-shooting-sheet-alpha_62: 112568420
+      warpgal-shooting-sheet-alpha_63: 1090355219
+      warpgal-shooting-sheet-alpha_64: 200364292
+      warpgal-shooting-sheet-alpha_65: -766311519
+      warpgal-shooting-sheet-alpha_66: -1007963471
+      warpgal-shooting-sheet-alpha_67: -1610662641
+      warpgal-shooting-sheet-alpha_68: 507512102
+      warpgal-shooting-sheet-alpha_69: 1165505800
+      warpgal-shooting-sheet-alpha_7: 1526329507
+      warpgal-shooting-sheet-alpha_70: 999490160
+      warpgal-shooting-sheet-alpha_71: -1503114150
+      warpgal-shooting-sheet-alpha_72: 1926599259
+      warpgal-shooting-sheet-alpha_73: 811565700
+      warpgal-shooting-sheet-alpha_74: 456660029
+      warpgal-shooting-sheet-alpha_75: 415086696
+      warpgal-shooting-sheet-alpha_76: -1863434697
+      warpgal-shooting-sheet-alpha_77: -1805208498
+      warpgal-shooting-sheet-alpha_78: -1640978174
+      warpgal-shooting-sheet-alpha_79: -1813812909
+      warpgal-shooting-sheet-alpha_8: 2133542837
+      warpgal-shooting-sheet-alpha_80: -1478605726
+      warpgal-shooting-sheet-alpha_81: -1983876378
+      warpgal-shooting-sheet-alpha_82: 691280642
+      warpgal-shooting-sheet-alpha_83: -952574901
+      warpgal-shooting-sheet-alpha_84: 1436256435
+      warpgal-shooting-sheet-alpha_85: -1722847290
+      warpgal-shooting-sheet-alpha_86: -2111324873
+      warpgal-shooting-sheet-alpha_87: -407048613
+      warpgal-shooting-sheet-alpha_88: 1872473684
+      warpgal-shooting-sheet-alpha_89: -1025499837
+      warpgal-shooting-sheet-alpha_9: -464612121
+      warpgal-shooting-sheet-alpha_90: -554575808
+      warpgal-shooting-sheet-alpha_91: -302234650
+      warpgal-shooting-sheet-alpha_92: -228226287
+      warpgal-shooting-sheet-alpha_93: 717479827
+      warpgal-shooting-sheet-alpha_94: 1461586042
+      warpgal-shooting-sheet-alpha_95: -1552783754
+      warpgal-shooting-sheet-alpha_96: -219382666
+      warpgal-shooting-sheet-alpha_97: 1981641535
+      warpgal-shooting-sheet-alpha_98: -2017602858
+      warpgal-shooting-sheet-alpha_99: -1370567369
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
